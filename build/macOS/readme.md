@@ -1,1 +1,1 @@
-This folder will contain macOS - 64 bit build.
+This folder will contain macOS (64-bit) build.
