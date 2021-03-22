@@ -26,7 +26,7 @@ pipeline {
                             if(os.equalsIgnoreCase("macOS")) {
                             sh 'chmod +x build.sh'
                             sh './build.sh Debug'
-                            archiveArtifacts artifacts: 'build/macOS/Debug/*', fingerprint: true
+                            archiveArtifacts artifacts: 'build/macOS/source/App/*', fingerprint: true
                             }  else if(os.equalsIgnoreCase("Windows")) {
                                 // Perform Windows related build task
                             } else {
@@ -43,7 +43,7 @@ pipeline {
                             if(os.equalsIgnoreCase("macOS")) {
                             sh 'chmod +x build.sh'
                             sh './build.sh Release'
-                            archiveArtifacts artifacts: 'build/macOS/Release/*', fingerprint: true
+                            archiveArtifacts artifacts: 'build/macOS/source/App/*', fingerprint: true
                             }  else if(os.equalsIgnoreCase("Windows")) {
                                 // Perform Windows related build task
                             } else {
