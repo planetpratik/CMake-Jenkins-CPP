@@ -9,9 +9,11 @@ pipeline {
     stages {
         stage("Init") {
             steps {
-                groovyScript = load "build.groovy"
-                os = groovyScript.findOS()
-                echo 'Building the application...'
+                script {
+                    groovyScript = load "build.groovy"
+                    os = groovyScript.findOS()
+                    echo 'Building the application...'
+                }
             }
         }
         stage("Build") {
@@ -54,8 +56,9 @@ pipeline {
         }
         stage("Test") {
             steps {
-                echo 'Running the application...'
-                // If operating system is macOS
+                script {
+                    echo 'Running the application...'
+                    // If operating system is macOS
                     if(os.equal("macOS")) {
                         sh 'chmod +x run.sh'
                         sh 'run.sh'
@@ -64,6 +67,7 @@ pipeline {
                     } else {
                         // Perform Linux related test task
                     }
+                }
             }
         }
     }
