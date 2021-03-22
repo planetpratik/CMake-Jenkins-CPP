@@ -12,3 +12,4 @@ def findOS() {
         return "Windows"
     }
 }
+return this
