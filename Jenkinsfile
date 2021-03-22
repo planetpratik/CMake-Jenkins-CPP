@@ -23,11 +23,11 @@ pipeline {
                     steps {
                         script {
                             // If operating system is macOS
-                            if(os.equal("macOS")) {
+                            if(os.equalsIgnoreCase("macOS")) {
                             sh 'chmod +x build.sh'
                             sh 'build.sh Debug'
                             archiveArtifacts artifacts: 'build/macOS/Debug/*', fingerprint: true
-                            }  else if(os.equal("Windows")) {
+                            }  else if(os.equalsIgnoreCase("Windows")) {
                                 // Perform Windows related build task
                             } else {
                                 // Perform Linux related build task
@@ -40,11 +40,11 @@ pipeline {
                     steps {
                         script {
                             // If operating system is macOS
-                            if(os.equal("macOS")) {
+                            if(os.equalsIgnoreCase("macOS")) {
                             sh 'chmod +x build.sh'
                             sh 'build.sh Release'
                             archiveArtifacts artifacts: 'build/macOS/Release/*', fingerprint: true
-                            }  else if(os.equal("Windows")) {
+                            }  else if(os.equalsIgnoreCase("Windows")) {
                                 // Perform Windows related build task
                             } else {
                                 // Perform Linux related build task
@@ -59,10 +59,10 @@ pipeline {
                 script {
                     echo 'Running the application...'
                     // If operating system is macOS
-                    if(os.equal("macOS")) {
+                    if(os.equalsIgnoreCase("macOS")) {
                         sh 'chmod +x run.sh'
                         sh 'run.sh'
-                    } else if(os.equal("Windows")) {
+                    } else if(os.equalsIgnoreCase("Windows")) {
                         // Perform Windows related test task
                     } else {
                         // Perform Linux related test task
