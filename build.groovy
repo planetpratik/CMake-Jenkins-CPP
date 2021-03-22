@@ -1,7 +1,7 @@
 def findOS() {
     if (isUnix()) {
         def osName = sh(script: 'uname', returnStdout: true)
-        if (uname.startsWith("Darwin")) {
+        if (osName.startsWith("Darwin")) {
             return "macOS"
         }
         else {
