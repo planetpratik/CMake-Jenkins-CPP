@@ -12,27 +12,27 @@
 ### Project Structure :-
     .  
     ├── build                                  # Build Directory for Project  
-    │   ├── macOS                         # macOS ( 64-bit ) build    
-    │   ├── Windows                     # Windows build  
-    │   │   ├── Win32                     # Windows ( 32-bit ) build   
-    │   │   ├── Win64                     # Windows ( 32-bit ) build   
-    ├── cmake                                # CMake related files     
-    │   ├── Toolchain                     # Toolchain files for different platforms   
-    ├── include                              # Header Files    
-    │   ├── Library.Shared            # Header files for shared library project  
-    ├── source                               # All source files goes here
+    │   ├── macOS                              # macOS ( 64-bit ) build    
+    │   ├── Windows                            # Windows build  
+    │   │   ├── Win32                          # Windows ( 32-bit ) build   
+    │   │   ├── Win64                          # Windows ( 32-bit ) build   
+    ├── cmake                                  # CMake related files     
+    │   ├── Toolchain                          # Toolchain files for different platforms   
+    ├── include                                # Header Files    
+    │   ├── Library.Shared                     # Header files for shared library project  
+    ├── source                                 # All source files goes here
     │   ├── CMakeLists.txt   
-    │   ├── App                             # This project contains .cpp file with main() function    
+    │   ├── App                                # This project contains .cpp file with main() function    
     │   │   ├── CMakeLists.txt       
-    │   │   ├── ...                             # Source files for App project   
-    │   ├── Library.Shared           # Shared Library  
+    │   │   ├── ...                            # Source files for App project   
+    │   ├── Library.Shared                     # Shared Library  
     │   │   ├── CMakeLists.txt       
-    │   │   ├── ...                             # Source files for Shared Library     
-    │   └── ...                                  # Other Libraries  
+    │   │   ├── ...                            # Source files for Shared Library     
+    │   └── ...                                # Other Libraries  
     └── build.sh  
     └── run.sh  
     └── build.groovy  
-    └── CMakeLists.txt                # Root CMakeLists file  
+    └── CMakeLists.txt                         # Root CMakeLists file  
     └── Jenkinsfile  
     └── LICENSE    
     └── README.md  
