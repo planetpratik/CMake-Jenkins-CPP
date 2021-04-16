@@ -11,3 +11,11 @@ set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
 set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
 set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
 set(CMAKE_CROSS_COMPILING TRUE)
+
+# ${CMAKE_SOURCE_DIR} & ${PROJECT_SOURCE_DIR} are not useful as a input to include statement
+# Hence its better to define our own environment variable indicating root directory and use it wherever required.
+# Here, we are using variable that we set earlier in build.sh file. Its temporary variable so doesnt pollute env variables.
+# We have appended vpckg toolchain at the end of our toolchain ( As per suggested by vcpkg docs )
+
+message(" Project Root Dir :-  $ENV{HELLOWORLD_ROOT_DIRECTORY}")
+include($ENV{HELLOWORLD_ROOT_DIRECTORY}/vcpkg/scripts/buildsystems/vcpkg.cmake)
