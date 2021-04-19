@@ -5,6 +5,10 @@
         {
             "name": "glfw3",
             "platform": "(osx & x64) | (linux & arm64)"
+        },
+        {
+            "name": "glew",
+            "platform": "(linux & arm64)"
         }
     ],
     "builtin-baseline": "3639676313a3e8b6fe1e94b9e7917b71d32511e3", 
