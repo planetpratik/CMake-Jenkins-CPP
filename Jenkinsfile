@@ -31,6 +31,9 @@ pipeline {
                                 // Perform Windows related build task
                             } else {
                                 // Perform Linux related build task
+                            sh 'chmod +x build.sh'
+                            sh './build.sh Debug'
+                            archiveArtifacts artifacts: 'build/Linux/aarch64/source/App/*', fingerprint: true
                             }
                         }
                     }
@@ -48,6 +51,9 @@ pipeline {
                                 // Perform Windows related build task
                             } else {
                                 // Perform Linux related build task
+                            sh 'chmod +x build.sh'
+                            sh './build.sh Release'
+                            archiveArtifacts artifacts: 'build/Linux/aarch64/source/App/*', fingerprint: true
                             }
                         }
                     }
@@ -66,6 +72,8 @@ pipeline {
                         // Perform Windows related test task
                     } else {
                         // Perform Linux related test task
+                        sh 'chmod +x run.sh'
+                        sh './run.sh'
                     }
                 }
             }
