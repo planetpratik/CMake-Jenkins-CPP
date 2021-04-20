@@ -2,7 +2,7 @@ def groovyScript
 def os
 
 pipeline {
-    agent any
+    agent { label 'CROSS-PLATFORM' }
     parameters {
         booleanParam(name: "RELEASE", defaultValue: false)
     }
