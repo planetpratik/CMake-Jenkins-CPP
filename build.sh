@@ -14,7 +14,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     export HELLOWORLD_ROOT_DIRECTORY=$PWD
     # Specifiy correct triplet you wish to use. If not specified, vcpkg will choose tirplet automatically based on compiler. 
     export VCPKG_TARGET_TRIPLET=x64-osx
-    cmake -B build/macOS -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=$1 -DCMAKE_TOOLCHAIN_FILE=cmake/Toolchain/x86-64-macOS.cmake
+    cmake -B build/macOS -G "Ninja" -DCMAKE_BUILD_TYPE=$1 -DCMAKE_TOOLCHAIN_FILE=cmake/Toolchain/x86-64-macOS.cmake
     cd build/macOS
     # cmake --build . -- VERBOSE=1
     cmake --build .
@@ -35,7 +35,7 @@ elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
     export VCPKG_TARGET_TRIPLET=arm64-linux
     # Environment variable VCPKG_FORCE_SYSTEM_BINARIES must be set on ARM and s390x platforms.
     export VCPKG_FORCE_SYSTEM_BINARIES=1
-    cmake -B build/Linux/aarch64 -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=$1 -DCMAKE_TOOLCHAIN_FILE=cmake/Toolchain/x64-ARM-Linux.cmake
+    cmake -B build/Linux/aarch64 -G "Ninja" -DCMAKE_BUILD_TYPE=$1 -DCMAKE_TOOLCHAIN_FILE=cmake/Toolchain/x64-ARM-Linux.cmake
     cd build/Linux/aarch64
     # cmake --build . -- VERBOSE=1
     cmake --build .
