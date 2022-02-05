@@ -4,7 +4,11 @@
     "dependencies": [
         {
             "name": "glfw3",
-            "platform": "(osx & x64) | (linux & arm64)"
+            "platform": "(osx & x64) | (linux & arm64) | (windows & x86) | (windows & x64)"
+        },
+        {
+            "name": "opengl",
+            "platform": "(windows & x86) | (windows & x64)"
         },
         {
             "name": "glew",
