@@ -50,11 +50,14 @@ This Project Requires following Tools to be installed
 * [Jenkins](https://www.jenkins.io/download) — Latest Jenkins Server for CI / CD
 * Your Favorite Compiler Toolchain - GCC, Clang or Mingw64. Also setup your environment PATH variable so compiler toolchain can be accessed by CMake and Jenkins.
 * [Mingw64](https://www.msys2.org/) - To use gcc / g++ on Windows, download MSYS2 and follow instructions given on page to install Mingw64.
+* [Ninja](https://ninja-build.org/) - To use Ninja build system. Download, Install and Update environment PATH variable to access Ninja from command line.
 * [Vcpkg](https://github.com/microsoft/vcpkg) — Latest Vcpkg package manager for dependency management **( Will be installed automatically ).**
 
 ### How to Run :-
 
-Before running project, Go to CMake Toolchain folder and update compiler **TOOLCHAIN_PATH** for every required platform toolchain as per your installation location. 
+Before running project, Go to CMake Toolchain folder and update compiler **TOOLCHAIN_PATH** for every required platform toolchain as per your installation location.
+
+This project uses Ninja buildsystem but you can use any other build system easily by modifying **build.sh** or **build.bat** files. Example build systems are **"Unix Makefiles", "MinGW Makefiles"** etc.
 
 Now You're ready to run this project. Clone this repository using following command
 ```sh
@@ -62,8 +65,10 @@ git clone https://github.com/planetpratik/CMake-Jenkins-CPP
 ```
 Add your code under **source**  folder.
 
-Once complete you can build Project manually by running **build&#46;sh** script ( macOS or Linux ) or **build.bat** ( Windows - work in progress ).
-Then you can run project by running **run&#46;sh** script ( macOS or Linux ) or **run&#46;bat** script ( Windows - work in progress ).
+Once complete you can build Project manually by running **build&#46;sh** script ( macOS or Linux ) or **build.bat** ( Windows ).
+Then you can run project by running **run&#46;sh** script ( macOS or Linux ) or **run&#46;bat** script ( Windows ).
+
+#### You must pass commandline arguments DEBUG or RELEASE while running build script as currently its parameterized to use with Jenkins.
 
 **Jenkinsfile** is coded to do above tasks automatically. You can build this project in jenkins using **"Build with parameters"** option when you open master branch in dashboard / Blue Ocean and it will do everything automatically.
 
