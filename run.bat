@@ -4,11 +4,13 @@ reg Query "HKLM\Hardware\Description\System\CentralProcessor\0" | find /i "x86" 
 :: If OS is 32-Bit, following code is executed.
 if %CURRENT_OS%==32BIT (
     cd build/Windows/Win32/source/App/
-    app
+    :: Executing GUI app will run it as a service on slave and test will fail hence disabled.
+    ::app
  ) else (
     :: If OS is 64-Bit, following code is executed.
     if %CURRENT_OS%==64BIT (
     cd build/Windows/Win64/source/App/
-    app
+    :: Executing GUI app will run it as a service on slave and test will fail hence disabled.
+    ::app
     ) 
  )
