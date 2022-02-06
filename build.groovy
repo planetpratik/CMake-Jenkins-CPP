@@ -9,7 +9,8 @@ def findOS() {
         }
     }
     else {
-        def windowsArch = bat(script: '@echo off && if defined ProgramFiles(x86) ( @echo Windows64 ) else ( @echo Windows32 )', returnStdout: true)
+        def batScript = '''@echo off && if defined ProgramFiles(x86) ( @echo Windows64 ) else ( @echo Windows32 )'''
+        def windowsArch = bat(script: batScript, returnStdout: true).trim()
         return windowsArch
     }
 }
