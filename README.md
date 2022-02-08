@@ -5,11 +5,11 @@
 ### A Cross-Platform Modern C++ Project Framework Set Up Using CMake, Jenkins & Vcpkg  
 ### Build And Test Modern C++ Project Concurrently on macOS, Linux and Windows
 
-### Goals :-
-* To create a Cross-Platform C++ project framework using CMake which follows same project structure as [FieaGameEngine Project](https://github.com/planetpratik/FieaGameEngine "FieaGameEngine Project") ( originally developed using Visual Studio 2017 ).  
-* To support Continuous Integration using Jenkins.
-* To support better C++ dependency management using Vcpkg as a package manager. 
-* To be easily able to bootstrap cross-platform modern C++ project using CMake & Jenkins with minimum efforts.  
+#
+### Features :-
+* **Bootstrap Cross-Platform modern C++ project** with minimum efforts. 
+* Supports **Continuous Integration ( CI ) using Jenkins**.
+* Supports **Better C++ dependency management using Vcpkg** as a package manager. 
 
 ### Project Structure :-
     .  
@@ -34,7 +34,9 @@
     │   │   ├── ...                            # Source files for Shared Library     
     │   └── ...                                # Other Libraries  
     └── build.sh  
-    └── run.sh  
+    └── build.bat
+    └── run.sh
+    └── run.bat
     └── build.groovy  
     └── vcpkg                                  # This Package manager will be installed as a build step
     └── vcpkg.json                             # Manifest file for Vcpkg to enable versioning
